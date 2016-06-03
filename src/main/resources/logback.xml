@@ -5,7 +5,7 @@
 	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
 		<file>voteEngine.log</file>
 		<encoder>
-			<pattern>[%level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %logger{36} - [requestID: %X{requestID}] %msg%n</pattern>
+			<pattern>[%level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %logger{36}  %msg%n</pattern>
 		</encoder>
 	</appender>
 	

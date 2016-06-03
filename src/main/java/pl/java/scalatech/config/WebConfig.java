@@ -32,15 +32,10 @@ public class WebConfig extends WebMvcConfigurationSupport {
     @Autowired
     private MessageSource messageSource;
 
-
-
-
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/hello").setViewName("hello");
     }
-
-
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -50,10 +45,7 @@ public class WebConfig extends WebMvcConfigurationSupport {
         registry.addResourceHandler("/favicon.ico").addResourceLocations("classpath:/static/favicon.ico").setCachePeriod(0);
         registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/").setCachePeriod(0);;
         registry.addResourceHandler("/js/**").addResourceLocations("classpath:/js/").setCachePeriod(0);
-
     }
-
-
 
     @Override
     public void addInterceptors(org.springframework.web.servlet.config.annotation.InterceptorRegistry registry) {

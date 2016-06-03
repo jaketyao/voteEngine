@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
@@ -43,11 +44,10 @@ public class ThymeleafConfiguration extends WebMvcConfigurerAdapter implements A
         return resolver;
     }
 
-    private SpringTemplateEngine templateEngine() {
+    private TemplateEngine templateEngine() {
         SpringTemplateEngine engine = new SpringTemplateEngine();
         engine.addTemplateResolver(urlTemplateResolver());
         engine.addTemplateResolver(templateResolver());
-        // pre-initialize the template engine by getting the configuration.  It's a side-effect.
         engine.getConfiguration();
         return engine;
     }
@@ -61,7 +61,6 @@ public class ThymeleafConfiguration extends WebMvcConfigurerAdapter implements A
         resolver.setCacheable(properties.isCache());
         return resolver;
     }
-
 
     private UrlTemplateResolver urlTemplateResolver() {
         return new UrlTemplateResolver();
