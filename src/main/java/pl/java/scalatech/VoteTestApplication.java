@@ -8,11 +8,11 @@ import lombok.extern.slf4j.Slf4j;
 
 @SpringBootApplication
 @Slf4j
-public class SpringJpaTestApplication implements CommandLineRunner{
+public class VoteTestApplication implements CommandLineRunner{
 
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringJpaTestApplication.class, args);
+        SpringApplication.run(VoteTestApplication.class, args);
     }
 
     @Override
